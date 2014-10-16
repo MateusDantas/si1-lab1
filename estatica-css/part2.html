@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Cadastro de Aluno</title>
+    <center><h1>Sistemas de Informação 1</h1></center>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="page-style">
+        <section>
+            <h2>Cadastro</h2>
+            Para realizar o cadastro na disciplina, preencha os dados abaixo e aperte 'Submit' quando tudo estiver pronto.
+        </section>
+        <section>
+            <h4>Note que sua matricula deve ser uma matricula valida oferecida pela universidade.</h4>
+            <form action="welcome.html" class="form-style">
+                <h1 class="header">Formulario</h1>
+                <label>
+                    <input type="text" name="name" placeholder="Nome Completo" required><br>
+                </label>
+                <lable>
+                    <input type="text" name="matricula" placeholder="Matricula" pattern="11[0-9]{1}110[0-9]{3}" required><br>
+                </lable>
+                <label>
+                    <input type="email" name="email" placeholder="Email" required><br>
+                </label>
+                <label>
+                    <input type="radio" name="legalTerms" required>Declaro que li e concordei com os termos da disciplina.<br>
+                </label>
+                <input type="submit" class="button" value="Submit">
+            </form>
+        </section>
+    </div>
+
+</body>
+</html>
