@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app="siApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Seja bem vindo a SI1</title>
+    <center><h1>Sucesso!</h1></center>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="angular/listController.js"></script>
+</head>
+<body>
+    <div class="container" ng-controller="ListController">
+        <section>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Welcome!</h4>
+                </div>
+                <div class="panel-body">
+                    <h3>Seu cadastro foi realizado com sucesso, seja bem vindo a disciplina!</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-group">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Disciplinas Desejadas</h3>
+                                    </div>
+                                    <div class="panel-body">
+
+                                        <p><input type="text" ng-model="desejadaName" placeholder="Adicione nova disciplina desejada" style="width: 80%">
+                                        <button type="button" class="btn btn-success" ng-click="addDesejada(desejadaName)">Add</button></p>
+
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>Nome</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr ng-repeat="disciplina in desejadas track by $index">
+                                                <td>{{disciplina}}</td>
+                                                <td><a class="btn pull-left btn-info btn-xs" ng-click="moveDesejadaToAprendida($index)">mover</a></td>
+                                                <td><a class="btn pull-left btn-danger btn-xs" ng-click="removeDesejada($index)">remover</a></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Disciplinas Aprendidas</h3>
+                                    </div>
+                                    <div class="panel-body">
+
+                                        <p><input type="text" ng-model="aprendidadeName" placeholder="Adicione nova disciplina aprendida" style="width: 80%">
+                                            <button type="button" class="btn btn-success" ng-click="addAprendida(aprendidadeName)">Add</button></p>
+
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>Nome</th>
+                                                <th></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr ng-repeat="disciplina in aprendidas track by $index">
+                                                <td>{{disciplina}}</td>
+                                                <td><a class="btn pull-left btn-danger btn-xs" ng-click="removeAprendida($index)">remover</a></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </section>
+        <a href="index.html" class="btn btn-warning">Voltar a pagina principal!</a>
+    </div>
+
+</body>
+</html>
